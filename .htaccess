@@ -1,0 +1,32 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# Clean URL rewrites
+# /product/123 -> /pages/product.php?id=123
+# /category/gold -> /pages/shop.php?category=Gold
+# /store -> /pages/store.php
+# /gold-rate -> /pages/gold-rate.php
+
+RewriteRule ^product/([^/]+)/?$ /pages/product.php?id=$1 [L,QSA]
+RewriteRule ^category/([^/]+)/?$ /pages/shop.php?category=$1 [L,QSA]
+RewriteRule ^shop/?$ /pages/shop.php [L,QSA]
+RewriteRule ^cart/?$ /pages/cart.php [L,QSA]
+RewriteRule ^checkout/?$ /pages/checkout.php [L,QSA]
+RewriteRule ^wishlist/?$ /pages/wishlist.php [L,QSA]
+RewriteRule ^orders/?$ /pages/orders.php [L,QSA]
+RewriteRule ^profile/?$ /pages/profile.php [L,QSA]
+RewriteRule ^store/?$ /pages/store.php [L,QSA]
+RewriteRule ^gold-rate/?$ /pages/gold-rate.php [L,QSA]
+RewriteRule ^contact/?$ /pages/contact.php [L,QSA]
+RewriteRule ^login/?$ /pages/login.php [L,QSA]
+RewriteRule ^register/?$ /pages/register.php [L,QSA]
+RewriteRule ^logout/?$ /pages/logout.php [L,QSA]
+
+# Protect includes and config
+<FilesMatch "^(includes|config|db)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

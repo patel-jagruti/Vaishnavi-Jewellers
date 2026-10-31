@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <defs>
+    <linearGradient id="m1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B1538"/>
+      <stop offset="50%" stop-color="#7A1E3A"/>
+      <stop offset="100%" stop-color="#5E1030"/>
+    </linearGradient>
+    <linearGradient id="g1a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#B8942E"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <filter id="glow1">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow1">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="300" height="200" fill="#0D0D0D"/>
+
+  <!-- Accent Border -->
+  <rect x="10" y="10" width="280" height="180" rx="5" fill="none" stroke="#D4AF37" stroke-opacity="0.2"/>
+
+  <!-- Crown -->
+  <g transform="translate(110, 25)" filter="url(#glow1)">
+    <path d="M5 25 L15 10 L25 18 L40 2 L55 18 L65 10 L75 25 Z" fill="url(#g1a)"/>
+    <circle cx="40" cy="5" r="3" fill="#FFF"/>
+    <circle cx="25" cy="20" r="2" fill="#FFF" fill-opacity="0.8"/>
+    <circle cx="55" cy="20" r="2" fill="#FFF" fill-opacity="0.8"/>
+    <path d="M20 25 Q40 28 60 25" fill="none" stroke="#D4AF37" stroke-width="1"/>
+  </g>
+
+  <!-- V Monogram -->
+  <text x="65" y="115" font-family="Georgia, serif" font-size="90" font-weight="400" fill="url(#m1)" filter="url(#shadow1)">V</text>
+
+  <!-- J Monogram -->
+  <text x="125" y="115" font-family="Georgia, serif" font-size="90" font-weight="400" fill="url(#m1)" filter="url(#shadow1)">J</text>
+
+  <!-- Diamond -->
+  <g transform="translate(135, 85)">
+    <polygon points="15,0 28,10 21,28 9,28 2,10" fill="url(#g1a)"/>
+    <polygon points="15,2 26,11 21,26 9,26 4,11" fill="none" stroke="#D4AF37" stroke-width="0.5"/>
+  </g>
+
+  <!-- VAISHNAVI -->
+  <text x="150" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="500" letter-spacing="8" fill="url(#m1)">VAISHNAVI</text>
+
+  <!-- JEWELLERS -->
+  <text x="150" y="175" text-anchor="middle" font-family="Georgia, serif" font-size="8" letter-spacing="6" fill="#D4AF37" fill-opacity="0.6">JEWELLERS</text>
+
+  <!-- Sparkles -->
+  <circle cx="50" cy="50" r="1" fill="#FFF">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="45" r="1" fill="#FFF">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+  <circle cx="45" cy="150" r="1" fill="#FFF">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+  <circle cx="255" cy="155" r="1" fill="#FFF">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.9s"/>
+  </circle>
+</svg>

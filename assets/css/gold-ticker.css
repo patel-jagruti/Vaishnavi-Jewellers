@@ -1,0 +1,127 @@
+/* Premium Luxury Gold Rate Ticker */
+:root{
+  --gold:#D4AF37;
+}
+
+.lux-gold-ticker{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+  background: rgba(17,17,17,0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+}
+
+.lux-gold-ticker__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 10px 14px;
+}
+
+.lux-gold-ticker__brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.lux-gold-ticker__brand .title{
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 0.45px;
+  white-space: nowrap;
+}
+
+.lux-gold-ticker__brand .badge{
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.28);
+  background: rgba(212,175,55,0.06);
+}
+
+.lux-gold-ticker__marqueeWrap{
+  flex: 1 1 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.16);
+  background: rgba(255,255,255,0.03);
+}
+
+.lux-gold-ticker__marquee{
+  display:flex;
+  width:max-content;
+  animation: luxGoldScroll linear infinite;
+  will-change: transform;
+}
+
+.lux-gold-ticker[data-speed="slow"] .lux-gold-ticker__marquee{ animation-duration: 26s; }
+.lux-gold-ticker[data-speed="normal"] .lux-gold-ticker__marquee{ animation-duration: 18s; }
+.lux-gold-ticker[data-speed="fast"] .lux-gold-ticker__marquee{ animation-duration: 12s; }
+
+@keyframes luxGoldScroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.lux-gold-ticker__row{
+  display:flex;
+}
+
+.lux-gold-ticker__item{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: rgba(255,255,255,0.95);
+  border-right: 1px solid rgba(212,175,55,0.14);
+  white-space: nowrap;
+}
+
+.lux-gold-ticker__label{ font-size: 13px; color: rgba(255,255,255,0.72); }
+
+.lux-gold-ticker__value{
+  font-size: 15px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #F4D77A 0%, var(--gold) 55%, #FFF2B9 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+
+.lux-gold-ticker__arrow{
+  font-size: 14px;
+  font-weight: 900;
+}
+.lux-gold-ticker__arrow.up{ color:#35d07f; }
+.lux-gold-ticker__arrow.down{ color:#ff4d4d; }
+
+.lux-gold-ticker__meta{
+  padding: 8px 14px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  border-left: 1px solid rgba(212,175,55,0.14);
+  white-space: nowrap;
+}
+
+.lux-gold-ticker:hover .lux-gold-ticker__marquee{ animation-play-state: paused; }
+
+/* Offset for fixed bar (only on pages where ticker exists) */
+body{ padding-top: 0; }
+
+.page-has-gold-ticker{ padding-top: 54px; }
+
+@media (max-width: 768px){
+  .page-has-gold-ticker{ padding-top: 94px; }
+  .lux-gold-ticker__inner{ flex-direction: column; align-items: stretch; }
+  .lux-gold-ticker__meta{ border-left:none; border-top:1px solid rgba(212,175,55,0.14); }
+}
+

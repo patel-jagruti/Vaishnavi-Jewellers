@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaishnavi Jewellers - Luxury Logo Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Logo Container */
+.logo-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 70%);
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), inset 0 0-100px 200px rgba(212, 175, 55, 0.03);
+}
+
+/* Decorative Border */
+.logo-container::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.logo-container::after {
+  content: '';
+  position: absolute;
+  inset: 25px;
+  border: 1px solid rgba(212, 175, 55, 0.05);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Main Monogram */
+.monogram-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Crown Ornament */
+.crown {
+  position: relative;
+  width: 80px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+.crown svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.crown-base {
+  fill: url(#goldGradient);
+}
+
+.crown-point {
+  fill: url(#goldGradient);
+}
+
+.crown-jewel {
+  fill: #fff;
+  filter: drop-shadow(0 0 3px #fff);
+}
+
+/* VJ Monogram */
+.monogram {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 180px;
+  font-weight: 400;
+  letter-spacing: -5px;
+  line-height: 1;
+  margin: 5px 0;
+}
+
+.monogram .letter-v {
+  position: relative;
+  background: linear-gradient(180deg, #F5E6A3 0%, #D4AF37 30%, #B8942E 60%, #D4AF37 80%, #F5E6A3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: shimmerV 3s ease-in-out infinite;
+}
+
+.monogram .letter-j {
+  position: relative;
+  margin-left: -8px;
+  background: linear-gradient(180deg, #F5E6A3 0%, #D4AF37 30%, #B8942E 60%, #D4AF37 80%, #F5E6A3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: shimmerJ 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes shimmerV {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+  50% { filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+}
+
+@keyframes shimmerJ {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+  50% { filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+}
+
+/* Diamond Icon */
+.diamond-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  margin-top: -25px;
+  margin-left: -15px;
+}
+
+.diamond-icon svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+  animation: diamondSparkle 2s ease-in-out infinite;
+}
+
+@keyframes diamondSparkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+/* Filigree Details */
+.filigree-left, .filigree-right {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.15;
+}
+
+.filigree-left {
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filigree-right {
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.filigree svg {
+  width: 100%;
+  height: 100%;
+  fill: #D4AF37;
+}
+
+/* Text Below */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 12px;
+  color: #D4AF37;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: rgba(212, 175, 55, 0.6);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* Sparkle Effects */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.sparkle:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.3s; }
+.sparkle:nth-child(3) { bottom: 25%; left: 25%; animation-delay: 0.6s; }
+.sparkle:nth-child(4) { bottom: 35%; right: 15%; animation-delay: 0.9s; }
+.sparkle:nth-child(5) { top: 45%; left: 10%; animation-delay: 1.2s; }
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Tag Version */
+.tag-version {
+  margin-top: 50px;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tag-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.tag-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  background: linear-gradient(180deg, #F5E6A3 0%, #D4AF37 50%, #B8942E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tag-v svg {
+  width: 40px;
+  height: 50px;
+  fill: url(#goldGradient);
+}
+
+.tag-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  color: #D4AF37;
+  text-transform: uppercase;
+}
+
+.tag-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: rgba(212, 175, 55, 0.5);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Simple Header Version */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-logo .icon-box {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-logo .icon-box svg {
+  width: 100%;
+  height: 100%;
+  fill: url(#goldGradient);
+}
+
+.header-logo .text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-logo .main-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #D4AF37;
+  text-transform: uppercase;
+}
+
+.header-logo .sub-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: rgba(212, 175, 55, 0.5);
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Definitions -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#F5E6A3"/>
+    <stop offset="30%" style="stop-color:#D4AF37"/>
+    <stop offset="60%" style="stop-color:#B8942E"/>
+    <stop offset="80%" style="stop-color:#D4AF37"/>
+    <stop offset="100%" style="stop-color:#F5E6A3"/>
+  </linearGradient>
+  <linearGradient id="diamondGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#ffffff"/>
+    <stop offset="50%" style="stop-color:#e8e8e8"/>
+    <stop offset="100%" style="stop-color:#ffffff"/>
+  </linearGradient>
+</defs>
+</svg>
+
+<!-- Main Logo Design -->
+<div class="logo-container">
+  <!-- Sparkle Effects -->
+  <div class="sparkles">
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+  </div>
+
+  <div class="monogram-wrapper">
+    <!-- Crown Ornament -->
+    <div class="crown">
+      <svg viewBox="0 0 80 45" xmlns="http://www.w3.org/2000/svg">
+        <path class="crown-base" d="M5 38 L10 25 L20 30 L30 18 L40 12 L50 18 L60 30 L70 25 L75 38 Z"/>
+        <path class="crown-point" d="M38 5 L42 15 L38 12 L34 15 Z" fill="#F5E6A3"/>
+        <path class="crown-point" d="M52 8 L55 16 L52 14 L49 16 Z" fill="#F5E6A3"/>
+        <circle class="crown-jewel" cx="40" cy="28" r="3"/>
+        <circle class="crown-jewel" cx="25" cy="32" r="2"/>
+        <circle class="crown-jewel" cx="55" cy="32" r="2"/>
+      </svg>
+    </div>
+
+    <!-- VJ Monogram -->
+    <div class="monogram">
+      <span class="letter-v">V</span>
+      <span class="letter-j">J</span>
+
+      <!-- Diamond Icon -->
+      <div class="diamond-icon">
+        <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="15,0 30,10 22,30 8,30 0,10" fill="url(#diamondGradient)" opacity="0.95"/>
+          <polygon points="15,2 27,11 21,28 9,28 3,11" fill="none" stroke="#fff" stroke-width="0.5"/>
+          <line x1="15" y1="2" x2="15" y2="28" stroke="#D4AF37" stroke-width="0.3" opacity="0.5"/>
+          <line x1="5" y1="13" x2="25" y2="13" stroke="#D4AF37" stroke-width="0.3" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Brand Text -->
+    <div class="brand-text">
+      <div class="brand-name">Vaishnavi</div>
+      <div class="brand-tagline"> Jewellers </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tag Version -->
+<div class="tag-version">
+  <div class="tag-icon">
+    <svg viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2 L38 15 L30 48 L10 48 L2 15 Z"/>
+      <path d="M20 5 L33 16 L27 43 L13 43 L7 16 Z" opacity="0.3"/>
+    </svg>
+  </div>
+  <div class="tag-text">
+    <div class="tag-name">Vaishnavi</div>
+    <div class="tag-line">Est. 1990 • Jewellers</div>
+  </div>
+</div>
+
+<!-- Simple Header Version -->
+<div style="margin-top:40px">
+  <div class="header-logo">
+    <div class="icon-box">
+      <svg viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2 L38 15 L30 48 L10 48 L2 15 Z"/>
+        <path d="M20 5 L33 16 L27 43 L13 43 L7 16 Z" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="text-box">
+      <div class="main-text">Vaishnavi</div>
+      <div class="sub-text">Jewellers</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

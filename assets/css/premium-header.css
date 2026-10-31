@@ -1,0 +1,508 @@
+/* ======================================================
+   VAISHNAVI LUXURY HEADER - Enterprise Grade
+   ====================================================== */
+
+:root {
+  --lux-primary: #7A1E3A;
+  --lux-primary-dark: #5a1529;
+  --lux-gold: #D4AF37;
+  --lux-gold-light: #F5E6A3;
+  --lux-gold-dark: #B8962E;
+  --lux-bg: #FFFFFF;
+  --lux-bg-soft: #FAF9F7;
+  --lux-text: #1A1A1A;
+  --lux-text-muted: #666666;
+  --lux-border: #E8E6E4;
+  --lux-shadow: 0 4px 30px rgba(122, 30, 58, 0.1);
+  --lux-shadow-heavy: 0 10px 50px rgba(0, 0, 0, 0.15);
+  --lux-font-display: 'Playfair Display', Georgia, serif;
+  --lux-font-body: 'Poppins', sans-serif;
+  --lux-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --header-height: 70px;
+  --header-height-lg: 140px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   MAIN HEADER STRUCTURE
+   ====================================================== */
+
+.lux-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: var(--lux-transition);
+}
+
+.lux-header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--lux-shadow);
+}
+
+.lux-header.scrolled .header-main {
+  padding: 12px 0;
+}
+
+.lux-header.transparent .header-main {
+  background: transparent;
+}
+
+/* Top Bar */
+.lux-topbar {
+  background: var(--lux-primary);
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.lux-topbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.topbar-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.topbar-links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--lux-transition);
+}
+
+.topbar-links a:hover {
+  color: var(--lux-gold);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gold-rate-link {
+  background: var(--lux-gold);
+  color: var(--lux-primary) !important;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Main Header */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  transition: var(--lux-transition);
+  background: #fff;
+}
+
+.header-main.transparent {
+  background: transparent;
+  color: #fff;
+}
+
+.header-main.transparent .nav-link {
+  color: #fff;
+}
+
+.header-main.transparent .header-icon {
+  color: #fff;
+}
+
+/* Logo */
+.lux-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.lux-logo:hover {
+  opacity: 0.9;
+}
+
+.lux-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.lux-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lux-logo-text b {
+  font-family: var(--lux-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--lux-primary);
+}
+
+.lux-logo-text span {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--lux-gold);
+  font-weight: 500;
+}
+
+.header-main.transparent .lux-logo-text b {
+  color: #fff;
+}
+
+/* Search Bar */
+.lux-search {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 40px;
+  position: relative;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--lux-bg-soft);
+  border: 2px solid transparent;
+  border-radius: 50px;
+  padding: 4px;
+  transition: var(--lux-transition);
+}
+
+.search-input-wrapper:focus-within {
+  background: #fff;
+  border-color: var(--lux-gold);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 18px;
+  font-size: 14px;
+  outline: none;
+  font-family: var(--lux-font-body);
+}
+
+.search-input-wrapper input::placeholder {
+  color: var(--lux-text-muted);
+}
+
+.search-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--lux-transition);
+  color: var(--lux-text-muted);
+}
+
+.search-btn:hover {
+  background: var(--lux-primary);
+  color: #fff;
+}
+
+.search-submit {
+  background: var(--lux-primary);
+  color: #fff !important;
+  border-radius: 50%;
+}
+
+.search-submit:hover {
+  background: var(--lux-primary-dark);
+}
+
+/* Header Icons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-action {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--lux-text);
+  transition: var(--lux-transition);
+}
+
+.header-action:hover {
+  background: var(--lux-bg-soft);
+  color: var(--lux-primary);
+}
+
+.header-action i {
+  font-size: 18px;
+}
+
+.header-action-label {
+  display: none;
+}
+
+.cart-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  background: var(--lux-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ======================================================
+   NAVIGATION BAR
+   ====================================================== */
+
+.lux-navbar {
+  background: var(--lux-bg-soft);
+  border-bottom: 3px solid var(--lux-gold);
+}
+
+.lux-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+  gap: 4px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lux-text);
+  text-decoration: none;
+  transition: var(--lux-transition);
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--lux-primary);
+}
+
+.nav-item.active .nav-link,
+.nav-link:hover {
+  background: var(--lux-primary);
+  color: #fff;
+}
+
+/* ======================================================
+   MEGA MENU
+   ====================================================== */
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-item:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-inner {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--lux-shadow-heavy);
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  min-width: 900px;
+  max-width: 1100px;
+  border: 1px solid var(--lux-border);
+}
+
+.mega-col h4 {
+  font-family: var(--lux-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--lux-primary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--lux-gold);
+}
+
+.mega-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-col li {
+  margin-bottom: 10px;
+}
+
+.mega-col a {
+  font-size: 13px;
+  color: var(--lux-text-muted);
+  text-decoration: none;
+  transition: var(--lux-transition);
+  display: block;
+  padding: 4px 0;
+}
+
+.mega-col a:hover {
+  color: var(--lux-primary);
+  transform: translateX(4px);
+}
+
+.mega-banner {
+  grid-column: span 1;
+}
+
+.mega-banner-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.mega-banner h5 {
+  font-family: var(--lux-font-display);
+  font-size: 16px;
+  color: var(--lux-primary);
+  margin-top: 12px;
+}
+
+.mega-banner p {
+  font-size: 12px;
+  color: var(--lux-text-muted);
+  margin-bottom: 8px;
+}
+
+.mega-banner .btn-shop {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--lux-primary);
+  color: #fff;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--lux-transition);
+}
+
+.mega-banner .btn-shop:hover {
+  background: var(--lux-gold);
+  color: var(--lux-primary);
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 1200px) {
+  .lux-search {
+    max-width: 350px;
+    margin: 0 20px;
+  }
+
+  .mega-menu-inner {
+    min-width: 700px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .lux-topbar {
+    display: none;
+  }
+
+  .lux-search {
+    display: none;
+  }
+
+  .header-action-label {
+    display: none;
+  }
+
+  .lux-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+
+  .mega-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-actions {
+    gap: 2px;
+  }
+
+  .header-action {
+    width: 38px;
+    height: 38px;
+  }
+
+  .header-action i {
+    font-size: 16px;
+  }
+
+  .lux-logo img {
+    height: 40px;
+  }
+
+  .lux-logo-text b {
+    font-size: 18px;
+  }
+}

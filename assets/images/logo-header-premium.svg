@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80">
+  <defs>
+    <linearGradient id="hg1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDF6E3"/>
+      <stop offset="20%" stop-color="#F5E6A3"/>
+      <stop offset="40%" stop-color="#D4AF37"/>
+      <stop offset="60%" stop-color="#B8942E"/>
+      <stop offset="80%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#F5E6A3"/>
+    </linearGradient>
+
+    <linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#F5E6A3"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+
+    <linearGradient id="dg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E8F4F8"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <filter id="hf1">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Compact Crown -->
+  <g transform="translate(200, 30)" filter="url(#hf1)">
+    <path d="M-30 10 L-22 2 L-15 6 L-8 -4 L0 -8 L8 -4 L15 6 L22 2 L30 10 Z" fill="url(#hg1)"/>
+    <circle cx="0" cy="-6" r="2" fill="url(#dg)"/>
+    <circle cx="-12" cy="2" r="1.2" fill="url(#dg)" opacity="0.8"/>
+    <circle cx="12" cy="2" r="1.2" fill="url(#dg)" opacity="0.8"/>
+  </g>
+
+  <!-- Compact VJ -->
+  <g transform="translate(155, 55)">
+    <text font-family="Georgia, serif" font-size="36" font-weight="500" fill="url(#hg1)">V</text>
+    <text x="32" font-family="Georgia, serif" font-size="36" font-weight="500" fill="url(#hg1)">J</text>
+  </g>
+
+  <!-- Small Diamond -->
+  <g transform="translate(200, 52)">
+    <polygon points="6,0 12,5 9,12 3,12 0,5" fill="url(#dg)"/>
+  </g>
+
+  <g transform="translate(200, 75)" text-anchor="middle">
+    <text font-family="Georgia, serif" font-size="11" font-weight="600" letter-spacing="3" fill="url(#hg1)">VAISHNAVI</text>
+  </g>
+
+  <g transform="translate(200, 83)" text-anchor="middle">
+    <text font-family="Arial, sans-serif" font-size="5" letter-spacing="4" fill="#D4AF37" fill-opacity="0.6">JEWELLERS</text>
+  </g>
+</svg>

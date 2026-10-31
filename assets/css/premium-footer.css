@@ -1,0 +1,394 @@
+/* ======================================================
+   VAISHNAVI PREMIUM FOOTER
+   ====================================================== */
+
+:root {
+  --pf-primary: #7A1E3A;
+  --pf-gold: #D4AF37;
+  --pf-bg: #0D0D0D;
+  --pf-bg-soft: #1A1A1A;
+  --pf-text: #FFFFFF;
+  --pf-text-muted: #999999;
+  --pf-border: #2A2A2A;
+  --pf-font-display: 'Playfair Display', Georgia, serif;
+  --pf-font-body: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   MAIN FOOTER
+   ====================================================== */
+
+.premium-footer {
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  padding-top: 80px;
+}
+
+.footer-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 50px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Brand Column */
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer-logo-text {
+  font-family: var(--pf-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--pf-text);
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--pf-text-muted);
+  margin-bottom: 24px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--pf-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pf-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--pf-gold);
+  color: var(--pf-primary);
+  transform: translateY(-4px);
+}
+
+/* Link Columns */
+.footer-column h4 {
+  font-family: var(--pf-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--pf-text);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--pf-gold);
+  display: inline-block;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: var(--pf-text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--pf-gold);
+  transform: translateX(4px);
+}
+
+/* Newsletter Column */
+.footer-newsletter p {
+  font-size: 14px;
+  color: var(--pf-text-muted);
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 14px 18px;
+  background: var(--pf-bg-soft);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  color: var(--pf-text);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  border-color: var(--pf-gold);
+}
+
+.newsletter-input::placeholder {
+  color: var(--pf-text-muted);
+}
+
+.newsletter-btn {
+  padding: 14px 24px;
+  background: var(--pf-gold);
+  border: none;
+  border-radius: 8px;
+  color: var(--pf-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background: #fff;
+}
+
+/* App Download */
+.app-download {
+  display: flex;
+  gap: 12px;
+}
+
+.app-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--pf-bg-soft);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  color: var(--pf-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.app-btn:hover {
+  border-color: var(--pf-gold);
+  background: var(--pf-bg-soft);
+}
+
+.app-btn i {
+  font-size: 20px;
+}
+
+.app-btn-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-btn-text span:first-child {
+  font-size: 10px;
+  color: var(--pf-text-muted);
+}
+
+.app-btn-text span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ======================================================
+   GOLD RATE TICKER
+   ====================================================== */
+
+.gold-rate-ticker {
+  background: var(--pf-bg-soft);
+  padding: 20px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.ticker-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticker-label {
+  font-size: 13px;
+  color: var(--pf-text-muted);
+}
+
+.ticker-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticker-value strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pf-gold);
+}
+
+.ticker-change {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.ticker-change.up {
+  background: rgba(46, 125, 50, 0.2);
+  color: #4CAF50;
+}
+
+.ticker-change.down {
+  background: rgba(229, 57, 53, 0.2);
+  color: #E53935;
+}
+
+/* ======================================================
+   FOOTER BOTTOM
+   ====================================================== */
+
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  font-size: 13px;
+  color: var(--pf-text-muted);
+}
+
+.payment-methods {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.payment-methods span {
+  font-size: 13px;
+  color: var(--pf-text-muted);
+}
+
+.payment-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.payment-icon {
+  width: 40px;
+  height: 28px;
+  background: var(--pf-bg-soft);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-icon i {
+  font-size: 20px;
+  color: var(--pf-text-muted);
+}
+
+/* ======================================================
+   QUICK LINKS BAR
+   ====================================================== */
+
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.quick-links a {
+  font-size: 13px;
+  color: var(--pf-text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.quick-links a:hover {
+  color: var(--pf-gold);
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 0 20px;
+  }
+
+  .footer-grid {
+    gap: 30px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ticker-content {
+    gap: 20px;
+  }
+}

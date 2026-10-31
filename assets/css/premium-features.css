@@ -1,0 +1,596 @@
+/* ======================================================
+   VAISHNAVI LUXURY FEATURES
+   ====================================================== */
+
+:root {
+  --lf-primary: #7A1E3A;
+  --lf-gold: #D4AF37;
+  --lf-bg: #FFFFFF;
+  --lf-bg-soft: #FAF9F7;
+  --lf-text: #1A1A1A;
+  --lf-text-muted: #666666;
+  --lf-font-display: 'Playfair Display', Georgia, serif;
+  --lf-font-body: 'Poppins', sans-serif;
+}
+
+/* ======================================================
+   GOLD RATE PAGE
+   ====================================================== */
+
+.gold-rate-page {
+  padding: 80px 0;
+  min-height: 60vh;
+}
+
+.rate-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.rate-header h1 {
+  font-family: var(--lf-font-display);
+  font-size: 48px;
+  color: var(--lf-primary);
+  margin-bottom: 10px;
+}
+
+.rate-header p {
+  color: var(--lf-text-muted);
+  font-size: 16px;
+}
+
+/* Rate Cards */
+.rate-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 992px) {
+  .rate-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .rate-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rate-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.rate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.rate-card.featured {
+  border: 2px solid var(--lf-gold);
+  position: relative;
+}
+
+.rate-card.featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--lf-gold);
+  color: var(--lf-primary);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rate-card-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: var(--lf-bg-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rate-card-icon i {
+  font-size: 24px;
+  color: var(--lf-gold);
+}
+
+.rate-card h3 {
+  font-family: var(--lf-font-display);
+  font-size: 18px;
+  color: var(--lf-text);
+  margin-bottom: 12px;
+}
+
+.rate-card .price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--lf-primary);
+  margin-bottom: 8px;
+}
+
+.rate-card .change {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rate-card .change.up {
+  color: #2E7D32;
+}
+
+.rate-card .change.down {
+  color: #E53935;
+}
+
+/* Live Rate Banner */
+.live-rate-banner {
+  background: linear-gradient(135deg, var(--lf-primary) 0%, #5a1529 100%);
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .live-rate-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.live-rate-info h2 {
+  font-family: var(--lf-font-display);
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.live-rate-info p {
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.live-rate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.live-rate-badge i {
+  color: var(--lf-gold);
+}
+
+.live-rate-chart {
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.chart-bar {
+  width: 20px;
+  background: var(--lf-gold);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.7;
+}
+
+/* Rate History */
+.rate-history {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.rate-history h3 {
+  font-family: var(--lf-font-display);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.history-table th {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--lf-text-muted);
+  font-weight: 600;
+}
+
+.history-table td {
+  font-size: 14px;
+}
+
+/* ======================================================
+   EXCHANGE CALCULATOR
+   ====================================================== */
+
+.exchange-calculator {
+  padding: 80px 0;
+  background: var(--lf-bg-soft);
+}
+
+.calculator-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.calculator-header h2 {
+  font-family: var(--lf-font-display);
+  font-size: 36px;
+  color: var(--lf-primary);
+  margin-bottom: 10px;
+}
+
+.calculator-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .calculator-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lf-text);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--lf-gold);
+}
+
+.calculate-btn {
+  grid-column: span 3;
+  padding: 18px;
+  background: var(--lf-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculate-btn:hover {
+  background: #5a1529;
+}
+
+@media (max-width: 768px) {
+  .calculate-btn {
+    grid-column: auto;
+  }
+}
+
+/* Result */
+.calculator-result {
+  margin-top: 30px;
+  padding: 30px;
+  background: var(--lf-bg-soft);
+  border-radius: 12px;
+  display: none;
+}
+
+.calculator-result.show {
+  display: block;
+}
+
+.result-value {
+  text-align: center;
+}
+
+.result-value h4 {
+  font-size: 14px;
+  color: var(--lf-text-muted);
+  margin-bottom: 8px;
+}
+
+.result-value .amount {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--lf-primary);
+}
+
+/* ======================================================
+   VIRTUAL TRY-ON
+   ====================================================== */
+
+.virtual-tryon {
+  padding: 80px 0;
+}
+
+.tryon-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .tryon-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tryon-preview {
+  background: var(--lf-bg-soft);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.tryon-preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tryon-upload {
+  padding: 40px;
+}
+
+.tryon-upload h3 {
+  font-family: var(--lf-font-display);
+  font-size: 28px;
+  color: var(--lf-primary);
+  margin-bottom: 16px;
+}
+
+.upload-area {
+  border: 3px dashed #ddd;
+  border-radius: 16px;
+  padding: 60px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+  border-color: var(--lf-gold);
+  background: var(--lf-bg-soft);
+}
+
+.upload-area i {
+  font-size: 48px;
+  color: var(--lf-gold);
+  margin-bottom: 16px;
+}
+
+.upload-area p {
+  font-size: 16px;
+  color: var(--lf-text-muted);
+}
+
+.ring-selector {
+  margin-top: 30px;
+}
+
+.ring-selector h4 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.ring-sizes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ring-size {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ring-size:hover,
+.ring-size.active {
+  border-color: var(--lf-primary);
+  background: var(--lf-primary);
+  color: #fff;
+}
+
+/* ======================================================
+   BOOK APPOINTMENT
+   ====================================================== */
+
+.appointment-booking {
+  padding: 80px 0;
+}
+
+.appointment-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.time-slot {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.time-slot:hover {
+  border-color: var(--lf-gold);
+}
+
+.time-slot.active {
+  background: var(--lf-primary);
+  border-color: var(--lf-primary);
+  color: #fff;
+}
+
+.time-slot.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ======================================================
+   STORE LOCATOR
+   ====================================================== */
+
+.store-locator {
+  padding: 80px 0;
+}
+
+.store-list {
+  display: grid;
+  gap: 20px;
+}
+
+.store-card {
+  display: flex;
+  gap: 24px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.store-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.store-image {
+  width: 200px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.store-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-info {
+  flex: 1;
+}
+
+.store-name {
+  font-family: var(--lf-font-display);
+  font-size: 20px;
+  color: var(--lf-text);
+  margin-bottom: 8px;
+}
+
+.store-address {
+  font-size: 14px;
+  color: var(--lf-text-muted);
+  margin-bottom: 12px;
+}
+
+.store-features {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.store-feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--lf-text-muted);
+}
+
+.store-actions {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .store-card {
+    flex-direction: column;
+  }
+
+  .store-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

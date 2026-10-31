@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 55" width="220" height="55">
+  <defs>
+    <linearGradient id="m1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B1538"/>
+      <stop offset="50%" stop-color="#7A1E3A"/>
+      <stop offset="100%" stop-color="#5E1030"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#B8942E"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crown -->
+  <path d="M5 18 L12 8 L18 14 L25 4 L32 14 L38 8 L45 18 Z" fill="url(#g1)"/>
+  <circle cx="25" cy="5" r="2" fill="#FFF"/>
+
+  <!-- V -->
+  <text x="8" y="48" font-family="serif" font-size="38" font-weight="bold" fill="url(#m1)">V</text>
+
+  <!-- J -->
+  <text x="32" y="48" font-family="serif" font-size="38" font-weight="bold" fill="url(#m1)">J</text>
+
+  <!-- Diamond -->
+  <polygon points="55,32 62,38 55,46 48,38" fill="url(#g1)"/>
+
+  <!-- VAISHNAVI -->
+  <text x="72" y="26" font-family="serif" font-size="16" font-weight="bold" fill="url(#m1)">VAISHNAVI</text>
+
+  <!-- JEWELLERS -->
+  <text x="72" y="42" font-family="serif" font-size="9" letter-spacing="3" fill="url(#g1)">JEWELLERS</text>
+</svg>

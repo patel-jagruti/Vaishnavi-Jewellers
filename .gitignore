@@ -1,0 +1,27 @@
+# Configuration and secrets
+.env
+.env.*
+includes/config.php
+
+# Local databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Dependencies
+/vendor/
+
+# Development tools
+.claude/
+.vscode/
+.idea/
+
+# Temporary and backup files
+*.log
+*.bak
+*~
+scratch/
+
+# Generated files
+test_output.html
+storage/emails/

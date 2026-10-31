@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6A3"/>
+      <stop offset="25%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#B8942E"/>
+      <stop offset="75%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#F5E6A3"/>
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6A3"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#F5E6A3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0a0a0a"/>
+
+  <!-- Subtle Border -->
+  <rect x="20" y="20" width="360" height="260" fill="none" stroke="#D4AF37" stroke-opacity="0.15" rx="10"/>
+  <rect x="25" y="25" width="350" height="250" fill="none" stroke="#D4AF37" stroke-opacity="0.05" rx="8"/>
+
+  <!-- Crown -->
+  <g transform="translate(165, 45)" filter="url(#glow)">
+    <path d="M5 30 L15 15 L25 22 L35 8 L50 5 L65 8 L75 22 L85 15 L95 30 Z" fill="url(#goldGrad)"/>
+    <circle cx="50" cy="20" r="4" fill="#fff"/>
+    <circle cx="30" cy="28" r="2.5" fill="#fff" fill-opacity="0.8"/>
+    <circle cx="70" cy="28" r="2.5" fill="#fff" fill-opacity="0.8"/>
+  </g>
+
+  <!-- Monogram V -->
+  <text x="95" y="175" font-family="Georgia, serif" font-size="130" font-weight="400" fill="url(#goldGrad)" filter="url(#glow)">V</text>
+
+  <!-- Monogram J -->
+  <text x="175" y="175" font-family="Georgia, serif" font-size="130" font-weight="400" fill="url(#goldGrad)" filter="url(#glow)">J</text>
+
+  <!-- Diamond in center -->
+  <g transform="translate(185, 130)" filter="url(#glow)">
+    <polygon points="15,0 30,12 22,30 8,30 0,12" fill="#fff" fill-opacity="0.95"/>
+    <polygon points="15,3 27,14 21,28 9,28 3,14" fill="none" stroke="#D4AF37" stroke-width="0.5"/>
+  </g>
+
+  <!-- Filigree Left -->
+  <path d="M50 140 Q40 150 50 160 Q40 170 50 180 M50 160 L55 150 M50 160 L45 150" fill="none" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Filigree Right -->
+  <path d="M350 140 Q360 150 350 160 Q360 170 350 180 M350 160 L345 150 M350 160 L355 150" fill="none" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Brand Name -->
+  <text x="200" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="500" letter-spacing="10" fill="#D4AF37">VAISHNAVI</text>
+
+  <!-- Tagline -->
+  <text x="200" y="255" text-anchor="middle" font-family="Georgia, serif" font-size="10" letter-spacing="8" fill="#D4AF37" fill-opacity="0.5">JEWELLERS</text>
+
+  <!-- Sparkles -->
+  <circle cx="80" cy="70" r="1.5" fill="#fff">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="320" cy="90" r="1.5" fill="#fff">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  <circle cx="90" cy="220" r="1.5" fill="#fff">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  <circle cx="310" cy="200" r="1.5" fill="#fff">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+  </circle>
+</svg>

@@ -1,0 +1,361 @@
+/* Additional UI improvements for a more “premium” look.
+   Loaded by style.css via @import if desired.
+   (We keep it separate to reduce merge risk.)
+*/
+
+/* Premium baseline */
+:root{
+  --ui-gold: #D4AF37;
+  --ui-gold-soft: rgba(212,175,55,.18);
+  --ui-line: rgba(31,26,23,.10);
+  --ui-shadow: 0 20px 60px rgba(0,0,0,.10);
+  --ui-burgundy: #7A1F2A;
+}
+
+/* Body entrance animation */
+body{
+  opacity:0;
+  animation: body-enter .5s ease forwards;
+}
+@keyframes body-enter{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* Make all clickable elements feel consistent */
+a{ text-decoration:none; }
+
+.btn, .small-btn, .icon-btn{
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Global card hover polish */
+.category, .product-card, .newsletter{
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.category:hover, .product-card:hover, .newsletter:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0,0,0,.08);
+}
+
+/* Product thumbnail shimmer */
+.thumb{
+  position: relative;
+}
+
+.thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(500px 160px at 10% 0%, rgba(212,175,55,.25), transparent 55%),
+    linear-gradient(120deg, rgba(156,42,47,.12), transparent 40%);
+  opacity: .0;
+  transition: opacity .18s ease;
+  pointer-events:none;
+}
+
+.product-card:hover .thumb::after{ opacity: .9; }
+
+/* More luxurious pagination/buttons */
+.small-btn{
+  text-align:center;
+  font-weight:700;
+}
+
+.small-btn.primary{
+  background: linear-gradient(180deg, rgba(156,42,47,.16), rgba(156,42,47,.06));
+}
+
+/* Better form inputs */
+input[type="text"], input[type="email"], input[type="number"], input[type="search"], textarea, select{
+  border-radius: 14px !important;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(156,42,47,.16) !important;
+  border-color: rgba(156,42,47,.55) !important;
+}
+
+/* Toast: smoother */
+.toast{
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Product detail zoom */
+.main-img{ cursor: zoom-in; }
+.main-img.is-zoomed{ cursor: zoom-out; }
+.main-img.is-zoomed + .zoom-lens,
+.main-img.is-zoomed ~ .zoom-result{ display: block; }
+
+/* Quick view modal base */
+.quick-view-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(4px);
+}
+.quick-view-modal.is-open{ display: flex; }
+.quick-view-content{
+  background: #fff;
+  border-radius: 24px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  animation: modal-enter .25s ease;
+}
+@keyframes modal-enter{
+  from{transform: scale(.95); opacity: 0;}
+  to{transform: scale(1); opacity: 1;}
+}
+
+/* Page load progress bar (optional) */
+.page-progress-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ui-gold), var(--ui-burgundy));
+  width: 0;
+  z-index: 9999;
+  transition: width .3s ease;
+}
+
+/* Smooth loading skeleton */
+.skeleton{
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+@keyframes skeleton-loading{
+  0%{background-position: 200% 0}
+  100%{background-position: -200% 0}
+}
+
+/* Mobile spacing polish */
+@media (max-width:520px){
+  .section{ padding: 18px 0; }
+  .section-head{ margin-bottom: 10px; }
+  .product-grid{ gap: 10px; }
+  .grid-4{ gap: 10px; }
+}
+
+/* High-DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+  .product-card, .category, .newsletter{
+    box-shadow: 0 14px 32px rgba(0,0,0,.06);
+  }
+}
+
+/* Glassmorphism Navigation Bar */
+.navbar, .lux-navbar, header {
+  background: rgba(255, 253, 251, 0.85) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s ease;
+}
+
+/* Premium Ticker */
+.gold-ticker {
+  background: linear-gradient(90deg, #3D0F19 0%, #5A1625 50%, #3D0F19 100%) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Next Level Product Cards */
+.product-card {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.03) !important;
+  box-shadow: 0 10px 30px rgba(90, 22, 37, 0.03) !important;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 40px rgba(90, 22, 37, 0.08) !important;
+  border-color: rgba(212, 175, 55, 0.25) !important;
+}
+
+.product-img {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FFFDFB 0%, #F5EFEB 100%);
+  border-radius: 20px 20px 0 0;
+  padding: 10px;
+}
+
+.product-img img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  border-radius: 12px;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.08) rotate(1deg) !important;
+}
+
+/* Elegant Badges */
+.product-badge {
+  background: linear-gradient(135deg, #7A1F35 0%, #5A1625 100%) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  font-size: 11px !important;
+  padding: 6px 14px !important;
+  border-radius: 30px !important;
+  box-shadow: 0 4px 10px rgba(122, 31, 53, 0.2);
+}
+
+/* Wishlist & Eye Buttons */
+.wish-btn, .quick-view-btn {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.wish-btn:hover, .quick-view-btn:hover {
+  background: #7A1F35 !important;
+  color: #fff !important;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(122, 31, 53, 0.25) !important;
+}
+
+/* Beautiful Pricing & Typography */
+.product-title a {
+  color: #1A1A1A !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease;
+}
+
+.product-title a:hover {
+  color: #7A1F35 !important;
+}
+
+.product-price {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+  color: #7A1F35 !important;
+  font-size: 17px !important;
+}
+
+.product-price del {
+  color: #999 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  margin-left: 8px;
+}
+
+/* Elegant Maroon Buttons with Gold Glow */
+.add-cart, .btn-addtocart, .btn-gold, .place-btn {
+  background: linear-gradient(135deg, #7A1F35 0%, #5A1625 100%) !important;
+  color: #fff !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(122, 31, 53, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.add-cart:hover, .btn-addtocart:hover, .btn-gold:hover, .place-btn:hover {
+  background: linear-gradient(135deg, #D4AF37 0%, #B69527 100%) !important;
+  color: #1A1A1A !important;
+  border-color: transparent !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Luxury Category Pills */
+.cat-pill {
+  background: #fff !important;
+  color: #555 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.3s ease !important;
+}
+
+.cat-pill:hover, .cat-pill.active {
+  background: #7A1F35 !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 20px rgba(122, 31, 53, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+.cat-pill .pill-count {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: inherit !important;
+  border-radius: 20px !important;
+  padding: 2px 8px !important;
+  font-size: 11px !important;
+  margin-left: 6px;
+}
+
+.cat-pill.active .pill-count {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Premium Filter Sidebar Card */
+.filter-card {
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.03) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+.filter-header h4 {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+  color: #7A1F35 !important;
+}
+
+/* Inputs, Textareas, Selects */
+input[type="text"], input[type="email"], input[type="number"], input[type="search"], textarea, select {
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, textarea:focus, select:focus {
+  border-color: #7A1F35 !important;
+  box-shadow: 0 0 0 4px rgba(122, 31, 53, 0.1) !important;
+}
+
+/* Custom Scrollbars for Premium Vibe */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7A1F35;
+}
+
