@@ -27,7 +27,7 @@ test_output.html
 storage/emails/
 
 # Videos (too large for GitHub - host on YouTube/Google Drive instead)
-assets/video/*.mp4
-assets/video/*.avi
-assets/video/*.mov
-assets/video/*.mkv
+assets/video/
+
+# Images (too large for GitHub ~300MB - images stay on server only)
+assets/images/
