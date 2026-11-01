@@ -26,8 +26,8 @@ scratch/
 test_output.html
 storage/emails/
 
-# Unused video
-/assets/video/bridal.mp4
-
-# Keep the used video
-# bridal 1.mp4 remains included
+# Videos (too large for GitHub - host on YouTube/Google Drive instead)
+assets/video/*.mp4
+assets/video/*.avi
+assets/video/*.mov
+assets/video/*.mkv
