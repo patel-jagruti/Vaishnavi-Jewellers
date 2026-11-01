@@ -25,3 +25,9 @@ scratch/
 # Generated files
 test_output.html
 storage/emails/
+
+# Unused video
+/assets/video/bridal.mp4
+
+# Keep the used video
+# bridal 1.mp4 remains included
